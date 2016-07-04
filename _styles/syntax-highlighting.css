@@ -1,0 +1,27 @@
+.langauge-js pre {
+  background-color: #fff;
+}
+
+/* Keywords */
+.language-js pre .k,
+.language-js pre .kd,
+.language-js pre .kr {
+  color: #000080;
+  font-weight: 600;
+}
+
+/* Comments */
+.language-js pre .c1 {
+  color: #808080;
+  font-style: italic;
+}
+
+/* Strings */
+.language-js pre .s1 {
+  color: #008000;
+}
+
+/* Properties */
+.language-js pre .na {
+  color: #660e7a;
+}

@@ -1,0 +1,108 @@
+body {
+    color: #333;
+}
+
+article.summary {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding-bottom: 6px;
+    width: 100%;
+}
+
+article.summary h3 {
+    margin-top: 0;
+}
+
+time {
+    border: 1px solid #CECECE;
+    border-radius: 4px;
+    float: left;
+    padding: 5px;
+    position: relative;
+    width: 60px;
+}
+
+time:before, time:after {
+    content: ' ';
+    border: 1px solid #CECECE;
+    border-radius: 0 0 4px 4px;
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    right: -1px;
+    bottom: -4px;
+    z-index: 1;
+}
+
+time:after {
+    border-radius: 4px;
+    box-shadow: 2px 4px 5px #666;
+    top: -1px;
+    bottom: -6px;
+}
+
+time span {
+    display: block;
+    line-height: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+time span.day {
+    color: #6AAEDF;
+    font-family: inherit;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.25em;
+}
+
+time span.day:before, time span.day:after {
+    content: ' ';
+    background: #AAA;
+    border: 1px solid #999;
+    border-radius: 50%;
+    border-width: 3px 1px;
+    height: 12px;
+    width: 3px;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 6px);
+}
+
+time span.day:after {
+    left: auto;
+    right: 0;
+}
+
+ul.social {
+    list-style: none inside none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.social li {
+    display: inline-block;
+    padding: 1em;
+}
+
+ul.social li a {
+    color: #000;
+    font-size: 4em;
+}
+
+ul.social li a:hover {
+    color: #6AAEDF;
+}
+
+@media (min-width: 992px) {
+    #app aside {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border-left: 1px solid #eee;
+    }
+}
