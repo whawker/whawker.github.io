@@ -14,7 +14,7 @@ My solution is to utilise a wrapper component. This wrappers reads the `validati
 ### Example Usage
 ```
 <ValidationMessageWrapper className="error" /* other HTML attribute props */>
-    <label for="user-email">Email:</label>
+    <label htmlFor="user-email">Email:</label>
     <input type="email" id="user-email" required onChange={this.myOnChangeHandler} />
 </ValidationMessageWrapper>
 ```
@@ -33,6 +33,12 @@ My solution is to utilise a wrapper component. This wrappers reads the `validati
     <td>string</td>  
     <td>'span'</td>  
     <td>The HTML element type to render the validation message within</td>  
+  </tr>
+  <tr>
+    <td>errorClassName</td>
+    <td>string</td>
+    <td>''</td>
+    <td>The CSS class name to apply when the wrapped input has an error message to display</td>
   </tr>
   <tr>
     <td><a href="https://facebook.github.io/react/docs/tags-and-attributes.html#html-attributes" target="_blank">HTML Attributes</a></td>  
@@ -136,11 +142,11 @@ class ValidationMessageWrapper extends Component {
     }
 
     render () {
-        let { children, ...rest } = this.props;
+        let { errorClassName, children, ...rest } = this.props;
         let { message } = this.state;
 
         return (
-            <div>
+            <div className={message && errorClassName}>
                 {Children.map(children, this.wrapInputOnChangeHandler)}
                 {validationMessage({ message, ...rest })}
             </div>
@@ -150,12 +156,17 @@ class ValidationMessageWrapper extends Component {
 
 ValidationMessageWrapper.propTypes = {
     componentClass: PropTypes.string,
+    errorClassName: PropTypes.string,
     children: PropTypes.node.isRequired
 };
 
 ValidationMessageWrapper.defaultProps = {
-    componentClass: 'span'
+    componentClass: 'span',
+    errorClassName: ''
 };
 
 export default ValidationMessageWrapper;
 ```
+
+### Result
+<a class="jsbin-embed" href="http://jsbin.com/nuwehesolu/1/embed">JS Bin on jsbin.com</a>
