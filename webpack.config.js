@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
     entry: './_src/index.js',
     output: {
@@ -17,5 +19,11 @@ module.exports = {
                 loader: 'style-loader!css-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
+            fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+        })
+    ]
 };
