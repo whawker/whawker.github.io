@@ -169,4 +169,5 @@ export default ValidationMessageWrapper;
 ```
 
 ### Result
-<a class="jsbin-embed" href="http://jsbin.com/nuwehesolu/1/embed">JS Bin on jsbin.com</a>
+<a class="jsbin-embed" href="http://jsbin.com/dabuceboxo/1/embed">JS Bin on jsbin.com</a>
+<script src="http://static.jsbin.com/js/embed.min.js?3.36.11"></script>
