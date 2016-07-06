@@ -2,6 +2,19 @@ body {
     color: #333;
 }
 
+h2.title {
+    margin-bottom: 20px;
+}
+
+h2.title a {
+    color: #333;
+}
+
+h2.title span {
+    font-size: 14px;
+    padding-left: 1em;
+}
+
 article.summary {
     margin-top: 0.5em;
     margin-bottom: 1em;
@@ -78,32 +91,69 @@ time span.day:after {
     right: 0;
 }
 
-ul.social {
+.social {
+    text-align: center;
+}
+
+.social ul {
+    display: inline-block;
     list-style: none inside none;
     margin: 0;
     padding: 0;
 }
 
-ul.social li {
+.social ul li {
     display: inline-block;
     padding: 1em;
 }
 
-ul.social li a {
+.social ul li a {
     color: #000;
     font-size: 4em;
 }
 
-ul.social li a:hover {
+.social ul li a:hover {
     color: #6AAEDF;
 }
 
 @media (min-width: 992px) {
+    a.brackets:before, a.brackets:after {
+        content: '{';
+        display: inline-block;
+        margin: 0 10px 0 0;
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    a.brackets:after {
+        content: '}';
+        margin: 0 0 0 10px;
+        transform: translateX(-20px);
+    }
+
+    a.brackets:hover {
+        text-decoration: none;
+    }
+
+    a.brackets:hover:before, a.brackets:hover:after {
+        opacity: 1;
+        transform: translateX(0);
+        transition: transform 0.3s, opacity 0.2s;
+    }
+
+    article.summary p {
+        padding: 0 20px;
+    }
+
     #app aside {
         position: fixed;
         top: 0;
         bottom: 0;
         right: 0;
         border-left: 1px solid #eee;
+    }
+
+    .social {
+        text-align: left;
     }
 }

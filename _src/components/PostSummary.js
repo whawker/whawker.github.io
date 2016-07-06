@@ -9,7 +9,12 @@ const PostSummary = ({ title, year, month, day, slug, summary, preload }) => (
             <DateBadge year={year} month={month} day={day} />
         </Col>
         <Col sm={11} xs={9}>
-            <h3><Link to={`post/${year}/${month}/${day}/${slug}`} onTouchStart={preload}>{title}</Link></h3>
+            <h3>
+                <Link
+                    to={`post/${year}/${month}/${day}/${slug}`}
+                    className="brackets"
+                    onTouchStart={preload}>{title}</Link>
+            </h3>
             <p>{summary}</p>
         </Col>
     </Row>
