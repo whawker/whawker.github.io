@@ -11,9 +11,9 @@ const AppRouter = ({ store }) => {
     return (
         <Router history={history}>
             <Route path="/" component={DefaultLayout}>
-				<IndexRoute component={HomePage} />
+                <IndexRoute component={HomePage} />
                 <Route path="post/:year/:month/:day/:slug" component={PostPage} />
-			</Route>
+            </Route>
         </Router>
     );
 };

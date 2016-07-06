@@ -26,7 +26,8 @@ class PostPage extends Component {
 }
 
 PostPage.propTypes = {
-    post: PropTypes.object.isRequired
+    post: PropTypes.object.isRequired,
+    fetchPostContent: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state, { params: { slug } }) => ({

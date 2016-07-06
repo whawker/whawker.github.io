@@ -16,7 +16,8 @@ article.summary h3 {
 time {
     border: 1px solid #CECECE;
     border-radius: 4px;
-    float: left;
+    display: block;
+    margin: 0 auto;
     padding: 5px;
     position: relative;
     width: 60px;

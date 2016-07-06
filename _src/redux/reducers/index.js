@@ -1,7 +1,7 @@
 import posts from './posts';
 
 const reducers = {
-	posts
+    posts
 };
 
 export default reducers;
