@@ -1,3 +1,13 @@
 ---
 ---
 <div>{{ content }}</div>
+<script>
+    // Redirect Google indexed pages to the correct React hash route
+    (function (path, hash) {
+        var postRegex = /^\/[0-9]{4}\/[0-9]{2}\/[0-9]{2}\/.*\.html$/;
+        if (path.match(postRegex) !== null && hash === '') {
+            var reactPath = '/#/post' + path.replace(/\.html$/, '');
+            window.location.href = reactPath;
+        }
+    }(window.location.pathname, window.location.hash));
+</script>
