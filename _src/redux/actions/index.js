@@ -17,6 +17,12 @@ export const fetchPostContent = (post) => {
                 }
             })
             .then(bodyContent => {
+                let tempDiv = document.createElement('div');
+                tempDiv.innerHTML = bodyContent;
+
+                return tempDiv.querySelector('#article').innerHTML;
+            })
+            .then(bodyContent => {
                 dispatch({
                     type: 'POST_CONTENT_FETCH_SUCCESS',
                     slug,

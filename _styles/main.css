@@ -145,7 +145,7 @@ time span.day:after {
         padding: 0 20px;
     }
 
-    #app aside {
+    .app aside {
         position: fixed;
         top: 0;
         bottom: 0;

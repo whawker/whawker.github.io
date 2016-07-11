@@ -7,10 +7,13 @@ import { configureStore } from './redux/configureStore';
 const store = configureStore(hashHistory, window.__initialState__);
 
 let render = () => {
-    ReactDOM.render(
-        <AppContainer store={store} />,
-        document.getElementById('app')
-    );
+    let app = document.getElementById('app');
+    if (app !== null) {
+        ReactDOM.render(
+            <AppContainer store={store}/>,
+            document.getElementById('app')
+        );
+    }
 };
 
 render();

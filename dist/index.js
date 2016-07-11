@@ -67,7 +67,10 @@
 	var store = (0, _configureStore.configureStore)(_reactRouter.hashHistory, window.__initialState__);
 
 	var render = function render() {
-	    _reactDom2.default.render(_react2.default.createElement(_AppContainer2.default, { store: store }), document.getElementById('app'));
+	    var app = document.getElementById('app');
+	    if (app !== null) {
+	        _reactDom2.default.render(_react2.default.createElement(_AppContainer2.default, { store: store }), document.getElementById('app'));
+	    }
 	};
 
 	render();
@@ -27323,17 +27326,44 @@
 	var DefaultLayout = function DefaultLayout(_ref) {
 	    var children = _ref.children;
 	    return _react2.default.createElement(
-	        'div',
-	        { className: 'vnext' },
+	        _reactBootstrap.Grid,
+	        { fluid: true },
 	        _react2.default.createElement(
-	            _reactBootstrap.Grid,
-	            { componentClass: 'header', fluid: true },
+	            _reactBootstrap.Row,
+	            null,
 	            _react2.default.createElement(
-	                _reactBootstrap.Row,
-	                null,
+	                _reactBootstrap.Col,
+	                { componentClass: 'header', sm: 12, lgHidden: true, mdHidden: true },
+	                _react2.default.createElement(
+	                    'h2',
+	                    { className: 'title' },
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/', className: 'brackets' },
+	                        'Will Hawker'
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        null,
+	                        'Senior Front End Web Developer'
+	                    )
+	                )
+	            )
+	        ),
+	        _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            null,
+	            _react2.default.createElement(
+	                _reactBootstrap.Col,
+	                { componentClass: 'main', md: 9, sm: 12 },
+	                children
+	            ),
+	            _react2.default.createElement(
+	                _reactBootstrap.Col,
+	                { componentClass: 'aside', md: 3, sm: 12 },
 	                _react2.default.createElement(
 	                    _reactBootstrap.Col,
-	                    { sm: 12, lgHidden: true, mdHidden: true },
+	                    { smHidden: true, xsHidden: true },
 	                    _react2.default.createElement(
 	                        'h2',
 	                        { className: 'title' },
@@ -27341,76 +27371,45 @@
 	                            _reactRouter.Link,
 	                            { to: '/', className: 'brackets' },
 	                            'Will Hawker'
-	                        ),
-	                        _react2.default.createElement(
-	                            'span',
-	                            null,
-	                            'Senior Front End Web Developer'
-	                        )
-	                    )
-	                )
-	            ),
-	            _react2.default.createElement(
-	                _reactBootstrap.Row,
-	                null,
-	                _react2.default.createElement(
-	                    _reactBootstrap.Col,
-	                    { componentClass: 'main', md: 9, sm: 12 },
-	                    children
-	                ),
-	                _react2.default.createElement(
-	                    _reactBootstrap.Col,
-	                    { componentClass: 'aside', md: 3, sm: 12 },
-	                    _react2.default.createElement(
-	                        _reactBootstrap.Col,
-	                        { smHidden: true, xsHidden: true },
-	                        _react2.default.createElement(
-	                            'h2',
-	                            { className: 'title' },
-	                            _react2.default.createElement(
-	                                _reactRouter.Link,
-	                                { to: '/', className: 'brackets' },
-	                                'Will Hawker'
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            'Senior Front End Web Developer'
 	                        )
 	                    ),
 	                    _react2.default.createElement(
-	                        _reactBootstrap.Col,
-	                        { className: 'social' },
+	                        'p',
+	                        null,
+	                        'Senior Front End Web Developer'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    _reactBootstrap.Col,
+	                    { className: 'social' },
+	                    _react2.default.createElement(
+	                        'ul',
+	                        null,
 	                        _react2.default.createElement(
-	                            'ul',
+	                            'li',
 	                            null,
 	                            _react2.default.createElement(
-	                                'li',
-	                                null,
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: 'https://github.com/whawker', title: 'GitHub' },
-	                                    _react2.default.createElement('i', { className: 'fa fa-github', 'aria-hidden': 'true' })
-	                                )
-	                            ),
+	                                'a',
+	                                { href: 'https://github.com/whawker', title: 'GitHub' },
+	                                _react2.default.createElement('i', { className: 'fa fa-github', 'aria-hidden': 'true' })
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
 	                            _react2.default.createElement(
-	                                'li',
-	                                null,
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: 'https://twitter.com/will_hawker', title: 'Twitter' },
-	                                    _react2.default.createElement('i', { className: 'fa fa-twitter', 'aria-hidden': 'true' })
-	                                )
-	                            ),
+	                                'a',
+	                                { href: 'https://twitter.com/will_hawker', title: 'Twitter' },
+	                                _react2.default.createElement('i', { className: 'fa fa-twitter', 'aria-hidden': 'true' })
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
 	                            _react2.default.createElement(
-	                                'li',
-	                                null,
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: 'https://uk.linkedin.com/in/williamhawker', title: 'LinkedIn' },
-	                                    _react2.default.createElement('i', { className: 'fa fa-linkedin-square', 'aria-hidden': 'true' })
-	                                )
+	                                'a',
+	                                { href: 'https://uk.linkedin.com/in/williamhawker', title: 'LinkedIn' },
+	                                _react2.default.createElement('i', { className: 'fa fa-linkedin-square', 'aria-hidden': 'true' })
 	                            )
 	                        )
 	                    )
@@ -46565,7 +46564,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\r\n    color: #333;\r\n}\r\n\r\nh2.title {\r\n    margin-bottom: 20px;\r\n}\r\n\r\nh2.title a {\r\n    color: #333;\r\n}\r\n\r\nh2.title span {\r\n    font-size: 14px;\r\n    padding-left: 1em;\r\n}\r\n\r\narticle.summary {\r\n    margin-top: 0.5em;\r\n    margin-bottom: 1em;\r\n    padding-bottom: 6px;\r\n    width: 100%;\r\n}\r\n\r\narticle.summary h3 {\r\n    margin-top: 0;\r\n}\r\n\r\ntime {\r\n    border: 1px solid #CECECE;\r\n    border-radius: 4px;\r\n    display: block;\r\n    margin: 0 auto;\r\n    padding: 5px;\r\n    position: relative;\r\n    width: 60px;\r\n}\r\n\r\ntime:before, time:after {\r\n    content: ' ';\r\n    border: 1px solid #CECECE;\r\n    border-radius: 0 0 4px 4px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: -1px;\r\n    right: -1px;\r\n    bottom: -4px;\r\n    z-index: 1;\r\n}\r\n\r\ntime:after {\r\n    border-radius: 4px;\r\n    box-shadow: 2px 4px 5px #666;\r\n    top: -1px;\r\n    bottom: -6px;\r\n}\r\n\r\ntime span {\r\n    display: block;\r\n    line-height: 1em;\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n    position: relative;\r\n    width: 100%;\r\n    z-index: 2;\r\n}\r\n\r\ntime span.day {\r\n    color: #6AAEDF;\r\n    font-family: inherit;\r\n    font-size: 2em;\r\n    font-weight: bold;\r\n    line-height: 1.25em;\r\n}\r\n\r\ntime span.day:before, time span.day:after {\r\n    content: ' ';\r\n    background: #AAA;\r\n    border: 1px solid #999;\r\n    border-radius: 50%;\r\n    border-width: 3px 1px;\r\n    height: 12px;\r\n    width: 3px;\r\n    position: absolute;\r\n    left: 0;\r\n    top: calc(50% - 6px);\r\n}\r\n\r\ntime span.day:after {\r\n    left: auto;\r\n    right: 0;\r\n}\r\n\r\n.social {\r\n    text-align: center;\r\n}\r\n\r\n.social ul {\r\n    display: inline-block;\r\n    list-style: none inside none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.social ul li {\r\n    display: inline-block;\r\n    padding: 1em;\r\n}\r\n\r\n.social ul li a {\r\n    color: #000;\r\n    font-size: 4em;\r\n}\r\n\r\n.social ul li a:hover {\r\n    color: #6AAEDF;\r\n}\r\n\r\n@media (min-width: 992px) {\r\n    a.brackets:before, a.brackets:after {\r\n        content: '{';\r\n        display: inline-block;\r\n        margin: 0 10px 0 0;\r\n        opacity: 0;\r\n        transform: translateX(20px);\r\n    }\r\n\r\n    a.brackets:after {\r\n        content: '}';\r\n        margin: 0 0 0 10px;\r\n        transform: translateX(-20px);\r\n    }\r\n\r\n    a.brackets:hover {\r\n        text-decoration: none;\r\n    }\r\n\r\n    a.brackets:hover:before, a.brackets:hover:after {\r\n        opacity: 1;\r\n        transform: translateX(0);\r\n        transition: transform 0.3s, opacity 0.2s;\r\n    }\r\n\r\n    article.summary p {\r\n        padding: 0 20px;\r\n    }\r\n\r\n    #app aside {\r\n        position: fixed;\r\n        top: 0;\r\n        bottom: 0;\r\n        right: 0;\r\n        border-left: 1px solid #eee;\r\n    }\r\n\r\n    .social {\r\n        text-align: left;\r\n    }\r\n}", ""]);
+	exports.push([module.id, "body {\r\n    color: #333;\r\n}\r\n\r\nh2.title {\r\n    margin-bottom: 20px;\r\n}\r\n\r\nh2.title a {\r\n    color: #333;\r\n}\r\n\r\nh2.title span {\r\n    font-size: 14px;\r\n    padding-left: 1em;\r\n}\r\n\r\narticle.summary {\r\n    margin-top: 0.5em;\r\n    margin-bottom: 1em;\r\n    padding-bottom: 6px;\r\n    width: 100%;\r\n}\r\n\r\narticle.summary h3 {\r\n    margin-top: 0;\r\n}\r\n\r\ntime {\r\n    border: 1px solid #CECECE;\r\n    border-radius: 4px;\r\n    display: block;\r\n    margin: 0 auto;\r\n    padding: 5px;\r\n    position: relative;\r\n    width: 60px;\r\n}\r\n\r\ntime:before, time:after {\r\n    content: ' ';\r\n    border: 1px solid #CECECE;\r\n    border-radius: 0 0 4px 4px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: -1px;\r\n    right: -1px;\r\n    bottom: -4px;\r\n    z-index: 1;\r\n}\r\n\r\ntime:after {\r\n    border-radius: 4px;\r\n    box-shadow: 2px 4px 5px #666;\r\n    top: -1px;\r\n    bottom: -6px;\r\n}\r\n\r\ntime span {\r\n    display: block;\r\n    line-height: 1em;\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n    position: relative;\r\n    width: 100%;\r\n    z-index: 2;\r\n}\r\n\r\ntime span.day {\r\n    color: #6AAEDF;\r\n    font-family: inherit;\r\n    font-size: 2em;\r\n    font-weight: bold;\r\n    line-height: 1.25em;\r\n}\r\n\r\ntime span.day:before, time span.day:after {\r\n    content: ' ';\r\n    background: #AAA;\r\n    border: 1px solid #999;\r\n    border-radius: 50%;\r\n    border-width: 3px 1px;\r\n    height: 12px;\r\n    width: 3px;\r\n    position: absolute;\r\n    left: 0;\r\n    top: calc(50% - 6px);\r\n}\r\n\r\ntime span.day:after {\r\n    left: auto;\r\n    right: 0;\r\n}\r\n\r\n.social {\r\n    text-align: center;\r\n}\r\n\r\n.social ul {\r\n    display: inline-block;\r\n    list-style: none inside none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.social ul li {\r\n    display: inline-block;\r\n    padding: 1em;\r\n}\r\n\r\n.social ul li a {\r\n    color: #000;\r\n    font-size: 4em;\r\n}\r\n\r\n.social ul li a:hover {\r\n    color: #6AAEDF;\r\n}\r\n\r\n@media (min-width: 992px) {\r\n    a.brackets:before, a.brackets:after {\r\n        content: '{';\r\n        display: inline-block;\r\n        margin: 0 10px 0 0;\r\n        opacity: 0;\r\n        transform: translateX(20px);\r\n    }\r\n\r\n    a.brackets:after {\r\n        content: '}';\r\n        margin: 0 0 0 10px;\r\n        transform: translateX(-20px);\r\n    }\r\n\r\n    a.brackets:hover {\r\n        text-decoration: none;\r\n    }\r\n\r\n    a.brackets:hover:before, a.brackets:hover:after {\r\n        opacity: 1;\r\n        transform: translateX(0);\r\n        transition: transform 0.3s, opacity 0.2s;\r\n    }\r\n\r\n    article.summary p {\r\n        padding: 0 20px;\r\n    }\r\n\r\n    .app aside {\r\n        position: fixed;\r\n        top: 0;\r\n        bottom: 0;\r\n        right: 0;\r\n        border-left: 1px solid #eee;\r\n    }\r\n\r\n    .social {\r\n        text-align: left;\r\n    }\r\n}", ""]);
 
 	// exports
 
@@ -47022,6 +47021,11 @@
 	            if (response.ok) {
 	                return response.text();
 	            }
+	        }).then(function (bodyContent) {
+	            var tempDiv = document.createElement('div');
+	            tempDiv.innerHTML = bodyContent;
+
+	            return tempDiv.querySelector('#article').innerHTML;
 	        }).then(function (bodyContent) {
 	            dispatch({
 	                type: 'POST_CONTENT_FETCH_SUCCESS',
