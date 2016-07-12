@@ -18,7 +18,7 @@ var bar = _ref.bar;
 as
 
 ```js
-let {foo, bar} = {foo: 'lorem', bar: 'ipsum'};
+let { foo, bar } = { foo: 'lorem', bar: 'ipsum' };
 // foo => lorem and bar => ipsum
 ```
 
@@ -29,7 +29,7 @@ Turns out, this is already a feature of destructing, that I completely missed, a
 Building on the ES6 code snippet above, the way to reassign to a different variable names, is to use the `[propertyName] : [variableName]` syntax.
 
 ```js
-let {foo: baz, bar: qux} = {foo: 'lorem', bar: 'ipsum'};
+let { foo: baz, bar: qux } = { foo: 'lorem', bar: 'ipsum' };
 // baz => lorem and qux => ipsum
 ```
 
