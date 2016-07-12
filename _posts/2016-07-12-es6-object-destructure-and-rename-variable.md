@@ -33,7 +33,7 @@ let { foo: baz, bar: qux } = { foo: 'lorem', bar: 'ipsum' };
 // baz => lorem and qux => ipsum
 ```
 
-This comes in very handy for ReactJS's lifecycle methods, whenever you want to compare previous/next props to the current props (i.e. `shouldComponentUpdate`, `componentWillUpdate` or `componentDidUpdate`) and want to avoid a variable name clash.
+This comes in very handy for ReactJS's lifecycle methods, whenever you want to compare previous/next props to the current props (i.e. `shouldComponentUpdate`, `componentWillUpdate` or `componentDidUpdate`) and avoid a variable name clash.
 
 ```js
 shouldComponentUpdate ({ createdAt: nextCreatedAt }) { // Destructure the function argument nextProps.createdAt as nextCreatedAt
