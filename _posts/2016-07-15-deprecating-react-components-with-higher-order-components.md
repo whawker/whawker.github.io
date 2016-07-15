@@ -7,7 +7,7 @@ When maintaining medium to large sized codebases, sooner or later you're going t
 
 One quick and easy solution to alerting other developers in your team when deprecated components are in use, is to wrap the deprecated component with a [higher order component](https://egghead.io/lessons/react-react-fundamentals-higher-order-components-replaces-mixins) (HOCs) sometimes known as decorators.
 
-HOCs take a component as an argument and return another component, the advantage being that you can inject functionality into the wrapped component. This can be incredibly powerful, two great examples being [`reduxForm`](http://redux-form.com/5.3.1/#/api/reduxForm) or Redux Form and [`injectIntl`](https://github.com/yahoo/react-intl/wiki/API#injection-api) of React Intl.
+HOCs take a component as an argument and return another component, the advantage being that you can inject functionality into the wrapped component. This can be incredibly powerful, two great examples being [`reduxForm`](http://redux-form.com/5.3.1/#/api/reduxForm) of [Redux Form](http://redux-form.com) and [`injectIntl`](https://github.com/yahoo/react-intl/wiki/API#injection-api) of [React Intl](https://github.com/yahoo/react-intl).
 
 ### Usage
 
