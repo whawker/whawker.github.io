@@ -11,7 +11,8 @@
 }
 
 /* Comments */
-.language-js pre .c1 {
+.language-js pre .c1,
+.language-js pre .cm {
   color: #808080;
   font-style: italic;
 }

@@ -36,8 +36,9 @@ const deprecated = (InnerComponent, msg = '') => class extends Component {
     }
 
     render () {
+        // Render the wrapped component with the same props
         return (
-            <InnerComponent {...this.props} /> // Render the wrapped component with the same props
+            <InnerComponent {...this.props} />
         );
     }
 };
@@ -63,9 +64,9 @@ const deprecated = (InnerComponent, msg = '') => class extends Component {
                 <p>{`${InnerComponent.name} has been deprecated ${msg}`}</p>
             );
         }
-    
+
         return (
-            <InnerComponent {...this.props} /> // Render the wrapped component with the same props
+            <InnerComponent {...this.props} />
         );
     }
 };
