@@ -46,7 +46,7 @@ const deprecated = (InnerComponent, msg = '') => class extends Component {
 export default deprecated;
 ```
 
-Of course you could ramp the warnings up 11 and prevent the deprecated component being render at all. (Again, only in development mode).
+Of course you could ramp the warnings up to 11 and prevent the deprecated component being rendered at all. (Again, only in development mode).
 
 ```js
 import React, { Component } from 'react';
